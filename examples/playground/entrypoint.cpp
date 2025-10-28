@@ -24,7 +24,6 @@
 // External headers
 #include <atomic>
 #include <iostream>
-#include <mutex>
 
 // Internal headers
 #include "entrypoint.hpp"
@@ -38,25 +37,23 @@
 /** Lock default constructor.
 **/
 Lock::Lock() {
-    // ...
 }
 
 /** Lock destructor.
 **/
 Lock::~Lock() {
-    // ...
 }
 
 /** [thread-safe] Acquire the lock, block if it is already acquired.
 **/
 void Lock::lock() {
-    // ...
+    mtx.lock();
 }
 
 /** [thread-safe] Release the lock, assuming it is indeed held by the caller.
 **/
 void Lock::unlock() {
-    // ...
+    mtx.unlock();
 }
 
 // -------------------------------------------------------------------------- //

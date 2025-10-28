@@ -23,6 +23,9 @@
 
 #pragma once
 
+// External headers
+#include <mutex>
+
 // -------------------------------------------------------------------------- //
 
 /** Your lock class.
@@ -41,6 +44,8 @@ public:
 public:
     void lock();
     void unlock();
+private:
+    std::mutex mtx;
 };
 
 // -------------------------------------------------------------------------- //
